@@ -1,0 +1,15 @@
+@import "variables";
+@import "functions";
+
+html,
+body {
+  font-family: $default-font;
+  font-size: $default-font-size;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
