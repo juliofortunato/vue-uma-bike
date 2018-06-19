@@ -1,7 +1,7 @@
 <template>
   <div class="landing">
 
-    <img class="landing__logo" src="@/assets/images/logo.svg" />
+    <Logo class="landing__logo" />
 
     <router-link
       :to="{ name: 'network' }"
@@ -11,6 +11,14 @@
     </router-link>
   </div>
 </template>
+
+<script>
+import Logo from '@/components/Logo.vue'
+
+export default {
+  components: { Logo }
+}
+</script>
 
 <style lang="scss">
 .landing {
