@@ -39,14 +39,17 @@ export default {
 
 <style lang="scss">
   .station-list {
-    margin-bottom: px-to-rem(20px);
-    min-height: 100%;
     display: flex;
     flex-direction: column;
+    height: 100%;
 
     &__item {
       &:not(:last-child) {
         margin-bottom: px-to-rem(10px);
+      }
+
+      &:last-child {
+        margin-bottom: px-to-rem(20px);
       }
     }
   }
