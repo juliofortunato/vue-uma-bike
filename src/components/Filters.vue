@@ -49,7 +49,7 @@
     &__label {
       margin-left: 5px;
       font-weight: $bold-font-weight;
-      font-size: px-to-rem(15px);
+      font-size: px-to-rem(14px);
       color: $secondary-color;
       text-transform: uppercase;
       line-height: 2;
@@ -58,21 +58,21 @@
       &::before {
         content: '';
         position: absolute;
-        height: px-to-rem(30px);
+        height: px-to-rem(25px);
         left: 0;
         background-image: $toogle-background;
-        background-size: px-to-rem(120px);
+        background-size: 200%;
         background-position-x: right;
-        width: px-to-rem(60px);
+        width: px-to-rem(50px);
         border-radius: px-to-rem(100px);
-        transition: background .30s linear;
+        transition: background .3s linear;
       }
 
       &::after {
         content: '';
         position: absolute;
-        height: px-to-rem(24px);
-        width: px-to-rem(24px);
+        height: px-to-rem(19px);
+        width: px-to-rem(19px);
         left: px-to-rem(3px);
         top: px-to-rem(3px);
         background-color: $white;
@@ -83,7 +83,7 @@
 
     &__checkbox:checked + &__label {
       &::after {
-        transform: translateX(px-to-rem(30px));
+        transform: translateX(px-to-rem(25px));
       }
 
       &::before {

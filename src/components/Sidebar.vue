@@ -31,15 +31,18 @@ export default {
     border-right-width: px-to-rem(3px);
     border-right-style: solid;
     background-color: $sidebar-color;
+    overflow-y: scroll;
 
     &__item {
+      width: 100%;
+
       &:not(:last-child) {
         margin-bottom: px-to-rem(40px);
       }
     }
 
     &__logo {
-      width: px-to-rem(280px);
+      width: px-to-rem(180px);
     }
   }
 </style>
