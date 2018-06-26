@@ -16,22 +16,17 @@ export default {
   components: { Station },
   data () {
     return {
-      stations: [
-        {
-          name: 'Estação Campolim',
-          address: 'Av. Antônio Carlos Comitre, 1393 Parque Campolim',
-          bikes: 2,
-          slots: 6,
-          active: true
+      stations: [ {
+        empty_slots: 8,
+        free_bikes: 3,
+        extra: {
+          open: true
         },
-        {
-          name: 'Parque Kasato Maru',
-          address: 'Av. Antônio Carlos Comitre, 200 Parque Campolim',
-          bikes: 6,
-          slots: 6,
-          active: false
-        }
-      ]
+        id: 'dec31b0d60602ee928d914dd1ea70ed9',
+        latitude: -23.50078,
+        longitude: -47.50812,
+        name: 'Ipiranga'
+      }]
     }
   }
 }
