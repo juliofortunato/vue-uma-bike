@@ -17,6 +17,8 @@
 <script>
 import { mapState } from 'vuex'
 
+import { FETCH_STATIONS } from '@/store/actions/types'
+
 import Map from '@/components/Map.vue'
 import Sidebar from '@/components/Sidebar.vue'
 import Spinner from '@/components/Spinner.vue'
@@ -42,6 +44,10 @@ export default {
     fuckingMethod (station) {
       this.focusedStation = station
     }
+  },
+
+  created () {
+    this.$store.dispatch(FETCH_STATIONS)
   }
 }
 </script>

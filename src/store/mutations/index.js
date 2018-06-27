@@ -1,4 +1,4 @@
-import * as types from '@/store/types'
+import * as types from '@/store/mutations/types'
 
 export const stationsMutations = {
   [types.DISPLAY_LOADER] (state) {
@@ -7,5 +7,9 @@ export const stationsMutations = {
 
   [types.HIDE_LOADER] (state) {
     state.isLoading = false
+  },
+
+  [types.SET_STATIONS] (state, payload) {
+    state.stations = payload
   }
 }
