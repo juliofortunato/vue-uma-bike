@@ -1,32 +1,28 @@
 <template>
-  <div class="station">
-    <h3 class="station__name">{{ station.name }}</h3>
+  <section class="station">
+    <h3 class="station__name">
+      {{ station.name }}
 
-    <address class="station__address">
-      {{ station.address }}
-    </address>
+      <img v-if="station.extra.open" class="station__icon" src="@/assets/images/active.svg">
+      <img v-else class="station__icon" src="@/assets/images/inactive.svg">
+    </h3>
 
-    <footer class="station__info">
-      <p class="station__numbers">
-        <img class="station__icon" src="@/assets/images/bicycle.svg">
-        <span class="station__icon-label">
-          {{ station.bikes }}/{{ station.slots }}
-        </span>
-      </p>
-      <p class="station__status station__status--active" v-if="station.active">
-        <img class="station__icon" src="@/assets/images/active.svg">
-        <span class="station__icon-label">
-          Ativa
-        </span>
-      </p>
-      <p class="station__status station__status--active" v-else>
-        <img class="station__icon" src="@/assets/images/inactive.svg">
-        <span class="station__icon-label station__icon-label--inactive">
-          Inativa
-        </span>
-      </p>
-    </footer>
-  </div>
+    <section class="station__info">
+      <img class="station__icon station__icon--bike" src="@/assets/images/bicycle.svg">
+
+      <div class="station__stats">
+        <span class="station__number">{{ station.free_bikes }}</span>
+        <span class="station__label">Bikes</span>
+      </div>
+
+      <div class="station__divider"></div>
+
+      <div class="station__stats">
+        <span class="station__number">{{ station.empty_slots }}</span>
+        <span class="station__label">Slots</span>
+      </div>
+    </section>
+  </section>
 </template>
 
 <script>
@@ -43,51 +39,50 @@ export default {
     color: $secondary-color;
 
     &__name {
+      display: flex;
+      justify-content: space-between;
       margin-top: 0;
       margin-bottom: px-to-rem(10px);
-      font-size: px-to-rem(16px);
+      font-size: px-to-rem(30px);
       color: $primary-color;
     }
 
-    &__address {
-      margin-bottom: px-to-rem(20px);
-      font-size: px-to-rem(14px);
-      font-style: normal;
+    &__icon {
+      height: px-to-rem(30px);
+
+      &--bike {
+        height: px-to-rem(45px);
+      }
     }
 
     &__info {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: px-to-rem(20px);
     }
 
-    &__numbers,
-    &__status {
-      margin: 0;
-      font-weight: $bold-font-weight;
+    &__stats {
       display: flex;
+      flex-direction: column;
       align-items: center;
     }
 
-    &__status {
+    &__divider {
+      align-self: stretch;
+      width: px-to-rem(2px);
+      background-color: $secondary-color;
+    }
+
+    &__number {
+      font-size: px-to-rem(36px);
+      font-weight: $bold-font-weight;
+    }
+
+    &__label {
       text-transform: uppercase;
-
-      &--active {
-        color: $primary-color;
-      }
-    }
-
-    &__icon {
-      height: px-to-rem(20px);
-      margin-right: px-to-rem(5px);
-
-    }
-
-    &__icon-label {
-      line-height: 1.1;
-
-      &--inactive {
-        color: $secondary-color;
-      }
+      font-weight: $bold-font-weight;
+      color: $gray;
     }
   }
 </style>

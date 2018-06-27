@@ -31,7 +31,7 @@ export default {
     border-right-width: px-to-rem(3px);
     border-right-style: solid;
     background-color: $sidebar-color;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     &__item {
       width: 100%;
