@@ -1,7 +1,14 @@
 <template>
   <div class="network">
-    <Sidebar class="network__sidebar" />
-    <Map class="network__map" />
+    <Sidebar
+      class="network__sidebar"
+      :focusedStation="focusedStation"
+    />
+
+    <Map
+      class="network__map"
+      :onStationClick="fuckingMethod"
+    />
   </div>
 </template>
 
@@ -10,7 +17,21 @@ import Map from '@/components/Map.vue'
 import Sidebar from '@/components/Sidebar.vue'
 
 export default {
-  components: { Map, Sidebar }
+  components: { Map, Sidebar },
+
+  data () {
+    return {
+      focusedStation: {
+        id: null
+      }
+    }
+  },
+
+  methods: {
+    fuckingMethod (station) {
+      this.focusedStation = station
+    }
+  }
 }
 </script>
 

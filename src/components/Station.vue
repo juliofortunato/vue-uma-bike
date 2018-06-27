@@ -1,5 +1,5 @@
 <template>
-  <section class="station">
+  <section class="station" :class="{ 'station--focused': isFocused }">
     <h3 class="station__name">
       {{ station.name }}
 
@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  props: ['station']
+  props: ['station', 'isFocused']
 }
 </script>
 
@@ -83,6 +83,10 @@ export default {
       text-transform: uppercase;
       font-weight: $bold-font-weight;
       color: $gray;
+    }
+
+    &--focused {
+      box-shadow: 2px 2px 10px $primary-color;
     }
   }
 </style>
