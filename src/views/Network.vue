@@ -9,15 +9,22 @@
       class="network__map"
       :onStationClick="fuckingMethod"
     />
+
+    <Spinner v-if="isLoading" />
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import Map from '@/components/Map.vue'
 import Sidebar from '@/components/Sidebar.vue'
+import Spinner from '@/components/Spinner.vue'
 
 export default {
-  components: { Map, Sidebar },
+  name: 'Network',
+
+  components: { Map, Sidebar, Spinner },
 
   data () {
     return {
@@ -25,6 +32,10 @@ export default {
         id: null
       }
     }
+  },
+
+  computed: {
+    ...mapState(['isLoading'])
   },
 
   methods: {
