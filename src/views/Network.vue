@@ -9,15 +9,24 @@
       class="network__map"
       :onStationClick="fuckingMethod"
     />
+
+    <Spinner v-if="isLoading" />
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
+import { FETCH_STATIONS } from '@/store/actions/types'
+
 import Map from '@/components/Map.vue'
 import Sidebar from '@/components/Sidebar.vue'
+import Spinner from '@/components/Spinner.vue'
 
 export default {
-  components: { Map, Sidebar },
+  name: 'Network',
+
+  components: { Map, Sidebar, Spinner },
 
   data () {
     return {
@@ -27,10 +36,18 @@ export default {
     }
   },
 
+  computed: {
+    ...mapState(['isLoading'])
+  },
+
   methods: {
     fuckingMethod (station) {
       this.focusedStation = station
     }
+  },
+
+  created () {
+    this.$store.dispatch(FETCH_STATIONS)
   }
 }
 </script>
