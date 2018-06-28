@@ -13,3 +13,9 @@ export const stationsActions = {
       })
   }
 }
+
+export const filtersActions = {
+  [types.SET_FILTERS] ({ commit }, payload) {
+    commit(mutations.SET_FILTERS, payload)
+  }
+}

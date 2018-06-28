@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Vuex, { Store } from 'vuex'
 
-import { stationsMutations } from '@/store/mutations'
-import { stationsActions } from '@/store/actions'
+import { stationsMutations, filtersMutations } from '@/store/mutations'
+import { stationsActions, filtersActions } from '@/store/actions'
 
 Vue.use(Vuex)
 
@@ -13,9 +13,9 @@ export default new Store({
     filters: []
   },
 
-  mutations: { ...stationsMutations },
+  mutations: { ...stationsMutations, ...filtersMutations },
 
   getters: {},
 
-  actions: { ...stationsActions }
+  actions: { ...stationsActions, ...filtersActions }
 })

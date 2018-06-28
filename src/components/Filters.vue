@@ -1,39 +1,56 @@
 <template>
-  <div class="">
-    <div class="filter">
-      <input class="filter__checkbox" type="checkbox" id="bikes-available" />
+  <div>
+    <div class="filter" v-for="filter in filters" :key="filter.id">
+      <input
+        class="filter__checkbox"
+        type="checkbox"
+        :id="filter.id"
+        :value="filter.id"
+        v-model="selectedFilters"
+      />
 
       <label
         class="filter__label"
-        for="bikes-available"
+        :for="filter.id"
       >
-        Só estações com bike
-      </label>
-    </div>
-
-    <div class="filter">
-      <input class="filter__checkbox" type="checkbox" id="slots-available" />
-
-      <label
-        class="filter__label"
-        for="slots-available"
-      >
-        Só estações com vagas
-      </label>
-    </div>
-
-    <div class="filter">
-      <input class="filter__checkbox" type="checkbox" id="only-active" />
-
-      <label
-        class="filter__label"
-        for="only-active"
-      >
-        Só estações ativas
+        {{ filter.label }}
       </label>
     </div>
   </div>
 </template>
+
+<script>
+import { SET_FILTERS } from '@/store/actions/types'
+
+export default {
+  data () {
+    return {
+      filters: [
+        {
+          id: 'bikesAvailable',
+          label: 'Só estações com bike'
+        },
+        {
+          id: 'slotsAvailable',
+          label: 'Só estações com vagas'
+        },
+        {
+          id: 'onlyActives',
+          label: 'Só estações ativas'
+        }
+      ],
+
+      selectedFilters: []
+    }
+  },
+
+  watch: {
+    selectedFilters (filters) {
+      this.$store.dispatch(SET_FILTERS, filters)
+    }
+  }
+}
+</script>
 
 <style lang="scss">
   $toogle-background: linear-gradient(to right, $primary-color 50%, $secondary-color 50%);

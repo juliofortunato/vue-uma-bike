@@ -13,3 +13,9 @@ export const stationsMutations = {
     state.stations = payload
   }
 }
+
+export const filtersMutations = {
+  [types.SET_FILTERS] (state, payload) {
+    state.filters = payload
+  }
+}
