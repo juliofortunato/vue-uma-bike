@@ -11,6 +11,10 @@ export const stationsActions = {
         commit(mutations.HIDE_LOADER)
         commit(mutations.SET_STATIONS, network.stations)
       })
+  },
+
+  [types.FOCUS_ON_STATION] ({ commit }, payload) {
+    commit(mutations.FOCUS_ON_STATION, payload)
   }
 }
 

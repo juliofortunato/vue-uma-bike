@@ -27,16 +27,16 @@ export default {
     return {
       filters: [
         {
-          id: 'bikesAvailable',
-          label: 'Só estações com bike'
+          id: 'withAvailableBikes',
+          label: 'Estações com mais de três bikes'
         },
         {
-          id: 'slotsAvailable',
-          label: 'Só estações com vagas'
+          id: 'withAvailableSlots',
+          label: 'Estações com mais de três slots'
         },
         {
-          id: 'onlyActives',
-          label: 'Só estações ativas'
+          id: 'activeStations',
+          label: 'Estações ativas'
         }
       ],
 
