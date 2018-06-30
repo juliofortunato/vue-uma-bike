@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 
 import Station from '@/components/Station.vue'
 
@@ -28,7 +28,7 @@ export default {
   },
 
   computed: {
-    ...mapState(['stations'])
+    ...mapGetters(['stations'])
   }
 }
 </script>

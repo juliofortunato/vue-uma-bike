@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Vuex, { Store } from 'vuex'
 
-import { stationsMutations } from '@/store/mutations'
-import { stationsActions } from '@/store/actions'
+import { stationsMutations, filtersMutations } from '@/store/mutations'
+import { stationsActions, filtersActions } from '@/store/actions'
+import { stationsGetters } from '@/store/getters'
 
 Vue.use(Vuex)
 
@@ -10,12 +11,15 @@ export default new Store({
   state: {
     isLoading: false,
     stations: [],
-    filters: []
+    filters: [],
+    focusedStation: {
+      id: null
+    }
   },
 
-  mutations: { ...stationsMutations },
+  mutations: { ...stationsMutations, ...filtersMutations },
 
-  getters: {},
+  getters: { ...stationsGetters },
 
-  actions: { ...stationsActions }
+  actions: { ...stationsActions, ...filtersActions }
 })

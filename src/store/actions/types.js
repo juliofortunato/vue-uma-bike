@@ -1,1 +1,3 @@
 export const FETCH_STATIONS = 'FETCH_STATIONS'
+export const SET_FILTERS = 'SET_FILTERS'
+export const FOCUS_ON_STATION = 'FOCUS_ON_STATION'
