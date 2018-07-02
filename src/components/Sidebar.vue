@@ -1,40 +1,11 @@
 <template>
-  <div id="sidebar" class="sidebar">
-    <Logo class="sidebar__item sidebar__logo" />
-    <Filters class="sidebar__item" />
-    <StationList class="sidebar__item" :focusedStationId="focusedStation.id" />
+  <div>
+    <span>Sidebar</span>
   </div>
 </template>
 
 <script>
-import Logo from '@/components/Logo.vue'
-import Filters from '@/components/Filters.vue'
-import StationList from '@/components/StationList.vue'
-
-export default {
-  props: ['focusedStation'],
-
-  components: {
-    Logo,
-    Filters,
-    StationList
-  },
-
-  watch: {
-    focusedStation (station) {
-      if (this.focusedStation) {
-        const element = `[id='${this.focusedStation.id}']`
-        const options = {
-          container: '#sidebar',
-          easing: 'ease-in',
-          offset: -50
-        }
-
-        this.$scrollTo(element, 500, options)
-      }
-    }
-  }
-}
+export default {}
 </script>
 
 <style lang="scss">

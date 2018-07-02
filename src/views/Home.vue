@@ -1,23 +1,9 @@
 <template>
-  <div class="landing">
-
-    <Logo class="landing__logo" />
-
-    <router-link
-      :to="{ name: 'network' }"
-      class="landing__call-to-action"
-    >
-      Ver estações
-    </router-link>
-  </div>
+  <div><span>Home</span></div>
 </template>
 
 <script>
-import Logo from '@/components/Logo.vue'
-
-export default {
-  components: { Logo }
-}
+export default {}
 </script>
 
 <style lang="scss">

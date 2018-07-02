@@ -1,50 +1,9 @@
 <template>
-  <div class="network">
-    <Sidebar
-      class="network__sidebar"
-      :focusedStation="focusedStation"
-    />
-
-    <Map
-      class="network__map"
-      :onStationClick="onStationClick"
-    />
-
-    <Spinner v-if="isLoading" />
-  </div>
+  <div><span>Network</span></div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-
-import { FETCH_STATIONS, FOCUS_ON_STATION } from '@/store/actions/types'
-
-import Map from '@/components/Map.vue'
-import Sidebar from '@/components/Sidebar.vue'
-import Spinner from '@/components/Spinner.vue'
-
-export default {
-  name: 'Network',
-
-  components: { Map, Sidebar, Spinner },
-
-  computed: {
-    ...mapState([
-      'isLoading',
-      'focusedStation'
-    ])
-  },
-
-  methods: {
-    onStationClick (station) {
-      this.$store.dispatch(FOCUS_ON_STATION, station)
-    }
-  },
-
-  created () {
-    this.$store.dispatch(FETCH_STATIONS)
-  }
-}
+export default {}
 </script>
 
 <style lang="scss">
@@ -61,3 +20,15 @@ export default {
     }
   }
 </style>
+
+<!-- {
+  name: 'Ipiranga',
+  id: 'dec31b0d60602ee928d914dd1ea70ed9',
+  empty_slots: 9,
+  free_bikes: 1,
+  longitude: -47.50812,
+  latitude: -23.50078,
+  extra: {
+    open: true
+  },
+} -->

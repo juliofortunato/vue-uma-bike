@@ -1,36 +1,11 @@
 <template>
-  <div class="station-list">
-    <Station
-      class="station-list__item"
-      v-for="station in stations"
-      :isFocused="isStationFocused(station)"
-      :key="station.name"
-      :station="station"
-      :id="station.id"
-    />
+  <div>
+    <span>StationList</span>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
-import Station from '@/components/Station.vue'
-
-export default {
-  components: { Station },
-
-  props: ['focusedStationId'],
-
-  methods: {
-    isStationFocused (station) {
-      return station.id === this.focusedStationId
-    }
-  },
-
-  computed: {
-    ...mapGetters(['stations'])
-  }
-}
+export default {}
 </script>
 
 <style lang="scss">
