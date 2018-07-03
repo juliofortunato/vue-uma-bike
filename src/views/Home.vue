@@ -1,5 +1,14 @@
 <template>
-  <div><span>Home</span></div>
+  <div class="landing">
+    <img class="landing__logo" src="@/assets/images/logo.svg" />
+
+    <router-link
+      class="landing__call-to-action"
+      :to="{ name: 'network' }"
+    >
+      Ver estações
+    </router-link>
+  </div>
 </template>
 
 <script>

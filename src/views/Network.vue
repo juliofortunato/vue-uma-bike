@@ -1,9 +1,44 @@
 <template>
-  <div><span>Network</span></div>
+  <div class="network">
+    <Sidebar class="network__sidebar" />
+
+    <Map class="network__map" :stations="stations" />
+
+    <Spinner v-if="isLoading" />
+  </div>
 </template>
 
 <script>
-export default {}
+import Sidebar from '@/components/Sidebar'
+import Map from '@/components/Map'
+import Spinner from '@/components/Spinner'
+
+export default {
+  components: {
+    Sidebar,
+    Map,
+    Spinner
+  },
+
+  data () {
+    return {
+      isLoading: false,
+      stations: [
+        {
+          name: 'Ipiranga',
+          id: 'dec31b0d60602ee928d914dd1ea70ed9',
+          empty_slots: 9,
+          free_bikes: 1,
+          longitude: -47.50812,
+          latitude: -23.50078,
+          extra: {
+            open: true
+          },
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style lang="scss">
@@ -20,15 +55,3 @@ export default {}
     }
   }
 </style>
-
-<!-- {
-  name: 'Ipiranga',
-  id: 'dec31b0d60602ee928d914dd1ea70ed9',
-  empty_slots: 9,
-  free_bikes: 1,
-  longitude: -47.50812,
-  latitude: -23.50078,
-  extra: {
-    open: true
-  },
-} -->
