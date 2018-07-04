@@ -33,7 +33,7 @@ export default {
         scaledSize: {
           width: 50,
           height: 65
-        },
+        }
       }
     }
   }

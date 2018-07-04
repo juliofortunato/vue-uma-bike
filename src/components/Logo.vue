@@ -1,3 +1,3 @@
 <template>
-  <h1>Vue uma bike?</h1>
+  <img src="@/assets/images/logo.svg" />
 </template>

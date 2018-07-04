@@ -1,6 +1,6 @@
 <template>
   <div class="landing">
-    <img class="landing__logo" src="@/assets/images/logo.svg" />
+    <Logo class="landing__logo" />
 
     <router-link
       class="landing__call-to-action"
@@ -12,7 +12,11 @@
 </template>
 
 <script>
-export default {}
+import Logo from '@/components/Logo'
+
+export default {
+  components: { Logo }
+}
 </script>
 
 <style lang="scss">

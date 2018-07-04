@@ -1,6 +1,6 @@
 <template>
   <div class="network">
-    <Sidebar class="network__sidebar" />
+    <Sidebar class="network__sidebar" :stations="stations" />
 
     <Map class="network__map" :stations="stations" />
 
@@ -9,6 +9,10 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
+import { FETCH_STATIONS } from '@/store/actions/types'
+
 import Sidebar from '@/components/Sidebar'
 import Map from '@/components/Map'
 import Spinner from '@/components/Spinner'
@@ -22,7 +26,6 @@ export default {
 
   data () {
     return {
-      isLoading: false,
       stations: [
         {
           name: 'Ipiranga',
@@ -33,10 +36,18 @@ export default {
           latitude: -23.50078,
           extra: {
             open: true
-          },
+          }
         }
       ]
     }
+  },
+
+  computed: {
+    ...mapState(['isLoading']),
+  },
+
+  created () {
+    this.$store.dispatch(FETCH_STATIONS)
   }
 }
 </script>

@@ -1,11 +1,25 @@
 <template>
-  <div>
-    <span>Sidebar</span>
+  <div class="sidebar">
+    <Logo class="sidebar__item sidebar__logo" />
+    <Filters class="sidebar__item" />
+    <StationList class="sidebar__item" :stations="stations" />
   </div>
 </template>
 
 <script>
-export default {}
+import Logo from '@/components/Logo'
+import Filters from '@/components/Filters'
+import StationList from '@/components/StationList'
+
+export default {
+  props: ['stations'],
+
+  components: {
+    Logo,
+    Filters,
+    StationList
+  }
+}
 </script>
 
 <style lang="scss">

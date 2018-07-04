@@ -1,11 +1,22 @@
 <template>
-  <div>
-    <span>StationList</span>
+  <div class="station-list">
+    <Station
+      class="station-list__item"
+      v-for="station in stations"
+      :key="station.id"
+      :station="station"
+    />
   </div>
 </template>
 
 <script>
-export default {}
+import Station from '@/components/Station'
+
+export default {
+  props: ['stations'],
+
+  components: { Station }
+}
 </script>
 
 <style lang="scss">

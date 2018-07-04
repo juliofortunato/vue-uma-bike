@@ -1,0 +1,1 @@
+export const FETCH_STATIONS = 'FETCH_STATIONS'

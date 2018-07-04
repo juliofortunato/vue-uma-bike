@@ -1,9 +1,48 @@
 <template>
-  <div><span>Filters</span></div>
+  <div>
+    <div
+      class="filter"
+      v-for="filter in filters"
+      :key="filter.id"
+    >
+      <input
+        class="filter__checkbox"
+        type="checkbox"
+        :id="filter.id"
+        :value="filter.id"
+      />
+
+      <label
+        class="filter__label"
+        :for="filter.id"
+      >
+        {{ filter.label }}
+      </label>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      filters: [
+        {
+          id: 'withAvailableBikes',
+          label: 'Estações com mais de três bikes'
+        },
+        {
+          id: 'withAvailableSlots',
+          label: 'Estações com mais três slots'
+        },
+        {
+          id: 'activeStations',
+          label: 'Estações ativas'
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style lang="scss">
